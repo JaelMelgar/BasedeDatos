@@ -1,77 +1,556 @@
--- Inserciones 
+ï»¿
+use Ferreteria;
+-- DIRECCIONES
+-- Departamentos
+go
+insert into Departamentos values
+--	ID_Departamento, Departamento, Pais 
+	('AH', 'Ahuachapï¿½n', 'El Salvador'),
+	('CA', 'Cabaï¿½as', 'El Salvador'),
+	('CH', 'Chalatenango', 'El Salvador'),
+	('CU', 'Cuscatlï¿½n', 'El Salvador'),
+	('LL', 'La Libertad', 'El Salvador'),
+	('LP', 'La Paz', 'El Salvador'),
+	('LU', 'La Uniï¿½n', 'El Salvador'),
+	('MO', 'Morazï¿½n', 'El Salvador'),
+	('SA', 'Santa Ana', 'El Salvador'),
+	('SM', 'San Miguel', 'El Salvador'),
+	('SS', 'San Salvador', 'El Salvador'),
+	('SV', 'San Vicente', 'El Salvador'),
+	('SO', 'Sonsonate', 'El Salvador'),
+	('US', 'Usulutï¿½n', 'El Salvador');
+go
+select * from Departamentos;
 
-INSERT INTO Direcciones (Linea1, Linea2, CP, Municipio, Departamento)
-VALUES
-    ('Calle Principal 1', 'Colonia Este', 'CP78580', 'Sonsonate', 'Sonsonate'),
-    ('Calle Principal 2', 'Colonia 14-',  'CP45690', 'Sonsonate', 'Sonsonate'),
-    ('Calle Principal 3', 'Colonia Sur', 'CP78291', 'Sonsonate', 'Sonsonate'),
-    ('Calle Principal 4', 'Colonia Principal', 'CP34426','Sonsonate', 'Sonsonate'),
-    ('Calle Principal 5', 'Colonia Norte', 'CP90576','Sonsonate', 'Sonsonate');
+go
+-- Municipios
+insert into Municipios values
+--	ID_Municipio, Municipio, ID_Departamento
+	('AHN', 'Ahuachapï¿½n Norte', 'AH'),
+	('AHC', 'Ahuachapï¿½n Centro', 'AH'),
+	('AHS', 'Ahuachapï¿½n Sur', 'AH'),
+	('CAE', 'Cabaï¿½as Este', 'CA'),
+	('CAO', 'Cabaï¿½as Oeste', 'CA'),
+	('CHN', 'Chalatenango Norte', 'CH'),
+	('CHC', 'Chalatenango Centro', 'CH'),
+	('CHS', 'Chalatenango Sur', 'CH'),
+	('CUN', 'Cuscatlï¿½n Norte', 'CU'),
+	('CUS', 'Cuscatlï¿½n Sur', 'CU'),
+	('LLN', 'La Libertad Norte', 'LL'),
+	('LLC', 'La Libertad Centro', 'LL'),
+	('LLO', 'La Libertad Oeste', 'LL'),
+	('LLE', 'La Libertad Este', 'LL'),
+	('LLS', 'La Libertad Sur', 'LL'),
+	('LLT', 'La Libertad Costa', 'LL'),
+	('LPO', 'La Paz Oeste', 'LP'),
+	('LPC', 'La Paz Centro', 'LP'),
+	('LPE', 'La Paz Este', 'LP'),
+	('LUN', 'La Uniï¿½n Norte', 'LU'),
+	('LUS', 'La Uniï¿½n Sur', 'LU'),
+	('MON', 'Morazï¿½n Norte', 'MO'),
+	('MOS', 'Morazï¿½n Sur', 'MO'),
+	('SAN', 'Santa Ana Norte', 'SA'),
+	('SAC', 'Santa Ana Centro', 'SA'),
+	('SAE', 'Santa Ana Este', 'SA'),
+	('SAO', 'Santa Ana Oeste', 'SA'),
+	('SMN', 'San Miguel Norte', 'SM'),
+	('SMC', 'San Miguel Centro', 'SM'),
+	('SMO', 'San Miguel Oeste', 'SM'),
+	('SSN', 'San Salvador Norte', 'SS'),
+	('SSO', 'San Salvador Oeste', 'SS'),
+	('SSE', 'San Salvador Este', 'SS'),
+	('SSC', 'San Salvador Centro', 'SS'),
+	('SSS', 'San Salvador Sur', 'SS'),
+	('SVN', 'San Vicente Norte', 'SV'),
+	('SVS', 'San Vicente Sur', 'SV'),
+	('SON', 'Sonsonate Norte', 'SO'),
+	('SOC', 'Sonsonate Centro', 'SO'),
+	('SOE', 'Sonsonate Este', 'SO'),
+	('SOO', 'Sonsonate Oeste', 'SO'),
+	('USN', 'Usulutï¿½n Norte', 'US'),
+	('USE', 'Usulutï¿½n Este', 'US'),
+	('USO', 'Usulutï¿½n Oeste', 'US');
+go
+select * from Municipios;
 
-INSERT INTO Empleados (Nombre, Apellidos, DUI, ISSS, IDDireccion, FechaNacimiento, Telefono, Email)
-VALUES
-    ('Antonio', 'Martinez', '62446778-0', 'ISSS57748660985', 1, '1999-09-02', '7678-8897', 'Antonio0@email.com'),
-    ('Karla', 'Mendez', '76458896-0', 'ISSS46995400897', 2, '1995-01-30', '6877-5400', 'karlam@email.com'),
-    ('Saul', 'Aguirre', '57559477-1', 'ISSS21120957469', 3, '1989-11-13', '7656-0097', 'saul_aguirre@email.com'),
-    ('Melissa', 'Hernandez', '19392748-0', 'ISSS54773789975', 4, '1992-12-16', '7231-2287', 'meliHernandez@email.com'),
-    ('Marta', 'Escobar', '34286672-1', 'ISSS33269986577', 5, '1994-12-05', '7765-7867', 'Marta_Escobar@email.com');
-	
+go
+-- Distritos
+insert into Distritos values
+-- ID_Distrito, Distrito, ID_Municipio
+-- Ahuachapan
+	('AHN01', 'Atiquizaya', 'AHN'),
+	('AHN02', 'El Refugio', 'AHN'),
+	('AHN03', 'San Lorenzo', 'AHN'),
+	('AHN04', 'Turï¿½n', 'AHN'),
+	('AHC01', 'Ahuachapï¿½n', 'AHC'),
+	('AHC02', 'Apaneca', 'AHC'),
+	('AHC03', 'Concepciï¿½n de Ataco', 'AHC'),
+	('AHC04', 'Tacuba', 'AHC'),
+	('AHS01', 'Guaymango', 'AHS'),
+	('AHS02', 'Jujutla', 'AHS'),
+	('AHS03', 'San Francisco Menï¿½ndez', 'AHS'),
+	('AHS04', 'San Pedro Puxtla', 'AHS'),
+-- Cabaï¿½as
+	('CAE01', 'Sensuntepeque', 'CAE'),
+	('CAE02', 'Victoria', 'CAE'),
+	('CAE03', 'Dolores', 'CAE'),
+	('CAE04', 'Guacotecti', 'CAE'),
+	('CAE05', 'San Isidro', 'CAE'),
+	('CAO01', 'Ilobasco', 'CAO'),
+	('CAO02', 'Tejutepeque', 'CAO'),
+	('CAO03', 'Jutiapa', 'CAO'),
+	('CAO04', 'Cinquera', 'CAO'),
+-- Chalatenango
+	('CHN01', 'La Palma', 'CHN'),
+	('CHN02', 'Citalï¿½', 'CHN'),
+	('CHN03', 'San Ignacio', 'CHN'),
+	('CHC01', 'Nueva Concepciï¿½n', 'CHC'),
+	('CHC02', 'Tejutla', 'CHC'),
+	('CHC03', 'La Reina', 'CHC'),
+	('CHC04', 'Agua Caliente', 'CHC'),
+	('CHC05', 'Dulce Nombre de Marï¿½a', 'CHC'),
+	('CHC06', 'El Paraï¿½so', 'CHC'),
+	('CHC07', 'San Fernando', 'CHC'),
+	('CHC08', 'San Francisco Morazï¿½n', 'CHC'),
+	('CHC09', 'San Rafael', 'CHC'),
+	('CHC10', 'Santa Rita', 'CHC'),
+	('CHS01', 'Chalatenango', 'CHS'),
+	('CHS02', 'Arcatao', 'CHS'),
+	('CHS03', 'Azacualpa', 'CHS'),
+	('CHS04', 'Comalapa', 'CHS'),
+	('CHS05', 'Concepciï¿½n Quezaltepeque', 'CHS'),
+	('CHS06', 'El Carrizal', 'CHS'),
+	('CHS07', 'La Laguna', 'CHS'),
+	('CHS08', 'Las Vueltas', 'CHS'),
+	('CHS09', 'Nombre de Jesï¿½s', 'CHS'),
+	('CHS10', 'Nueva Trinidad', 'CHS'),
+	('CHS11', 'Ojos de Agua', 'CHS'),
+	('CHS12', 'Potonico', 'CHS'),
+	('CHS13', 'San Antonio de La Cruz', 'CHS'),
+	('CHS14', 'San Antonio Los Ranchos', 'CHS'),
+	('CHS15', 'San Francisco Lempa', 'CHS'),
+	('CHS16', 'San Isidro Labrador', 'CHS'),
+	('CHS17', 'San Josï¿½ Cancasque', 'CHS'),
+	('CHS18', 'San Miguel de Mercedes', 'CHS'),
+	('CHS19', 'San Josï¿½ Las Flores', 'CHS'),
+	('CHS20', 'San Luis del Carmen', 'CHS'),
+-- Cuscatlï¿½n
+	('CUN01', 'Suchitoto', 'CUN'),
+	('CUN02', 'San Josï¿½ Guayabal', 'CUN'),
+	('CUN03', 'Oratorio de Concepciï¿½n', 'CUN'),
+	('CUN04', 'San Bartolomï¿½ Perulapï¿½a', 'CUN'),
+	('CUN05', 'San Pedro Perulapï¿½n', 'CUN'),
+	('CUS01', 'Cojutepeque', 'CUS'),
+	('CUS02', 'San Rafael Cedros', 'CUS'),
+	('CUS03', 'Candelaria', 'CUS'),
+	('CUS04', 'Monte San Juan', 'CUS'),
+	('CUS05', 'El Carmen', 'CUS'),
+	('CUS06', 'San Cristobal', 'CUS'),
+	('CUS07', 'Santa Cruz Michapa', 'CUS'),
+	('CUS08', 'San Ramï¿½n', 'CUS'),
+	('CUS09', 'El Rosario', 'CUS'),
+	('CUS10', 'Santa Cruz Analquito', 'CUS'),
+	('CUS11', 'Tenancingo', 'CUS'),
+-- La Libertad
+	('LLN01', 'Quezaltepeque', 'LLN'),
+	('LLN02', 'San Matï¿½as', 'LLN'),
+	('LLN03', 'San Pablo Tacachico', 'LLN'),
+	('LLC01', 'San Juan Opico', 'LLC'),
+	('LLC02', 'Ciudad Arce', 'LLC'),
+	('LLO01', 'Colï¿½n', 'LLO'),
+	('LLO02', 'Jayaque', 'LLO'),
+	('LLO03', 'Sacacoyo', 'LLO'),
+	('LLO04', 'Tepecoyo', 'LLO'),
+	('LLO05', 'Talnique', 'LLO'),
+	('LLE01', 'Antiguo Cuscatlï¿½n', 'LLE'),
+	('LLE02', 'Huizï¿½car', 'LLE'),
+	('LLE03', 'Nuevo Cuscatlï¿½n', 'LLE'),
+	('LLE04', 'San Josï¿½ Villanueva', 'LLE'),
+	('LLE05', 'Zaragoza', 'LLE'),
+	('LLS01', 'Comasagua', 'LLS'),
+	('LLS02', 'Santa Tecla', 'LLS'),
+	('LLT01', 'Chiltiupï¿½n', 'LLT'),
+	('LLT02', 'Jicalapa', 'LLT'),
+	('LLT03', 'La Libertad', 'LLT'),
+	('LLT04', 'Tamanique', 'LLT'),
+	('LLT05', 'Teotepeque', 'LLT'),
+-- La Paz
+	('LPO01', 'Cuyultitan', 'LPO'),
+	('LPO02', 'Olocuilta', 'LPO'),
+	('LPO03', 'San Juan Talpa', 'LPO'),
+	('LPO04', 'San Luis Talpa', 'LPO'),
+	('LPO05', 'San Pedro Masahuat', 'LPO'),
+	('LPO06', 'Tapalhuaca', 'LPO'),
+	('LPO07', 'San Francisco Chinameca', 'LPO'),
+	('LPC01', 'El Rosario', 'LPC'),
+	('LPC02', 'Jerusalï¿½n', 'LPC'),
+	('LPC03', 'Mercedes La Ceiba', 'LPC'),
+	('LPC04', 'Paraï¿½so de Osorio', 'LPC'),
+	('LPC05', 'San Antonio Masahuat', 'LPC'),
+	('LPC06', 'San Emigdio', 'LPC'),
+	('LPC07', 'San Juan Tepezontes', 'LPC'),
+	('LPC08', 'San Luï¿½s La Herradura', 'LPC'),
+	('LPC09', 'San Miguel Tepezontes', 'LPC'),
+	('LPC10', 'San Pedro Nonualco', 'LPC'),
+	('LPC11', 'Santa Marï¿½a Ostuma', 'LPC'),
+	('LPC12', 'Santiago Nonualco', 'LPC'),
+	('LPE01', 'San Juan Nonualco', 'LPE'),
+	('LPE02', 'San Rafael Obrajuelo', 'LPE'),
+	('LPE03', 'Zacatecoluca', 'LPE'),
+-- La Uniï¿½n
+	('LUN01', 'Anamorï¿½s', 'LUN'),
+	('LUN02', 'Bolivar', 'LUN'),
+	('LUN03', 'Concepciï¿½n de Oriente', 'LUN'),
+	('LUN04', 'El Sauce', 'LUN'),
+	('LUN05', 'Lislique', 'LUN'),
+	('LUN06', 'Nueva Esparta', 'LUN'),
+	('LUN07', 'Pasaquina', 'LUN'),
+	('LUN08', 'Polorï¿½s', 'LUN'),
+	('LUN09', 'San Josï¿½ La Fuente', 'LUN'),
+	('LUN10', 'Santa Rosa de Lima', 'LUN'),
+	('LUS01', 'Conchagua', 'LUS'),
+	('LUS02', 'El Carmen', 'LUS'),
+	('LUS03', 'Intipucï¿½', 'LUS'),
+	('LUS04', 'La Uniï¿½n', 'LUS'),
+	('LUS05', 'Meanguera del Golfo', 'LUS'),
+	('LUS06', 'San Alejo', 'LUS'),
+	('LUS07', 'Yayantique', 'LUS'),
+	('LUS08', 'Yucuaiquï¿½n', 'LUS'),
+-- Morazï¿½n
+	('MON01', 'Arambala', 'MON'),
+	('MON02', 'Cacaopera', 'MON'),
+	('MON03', 'Corinto', 'MON'),
+	('MON04', 'El Rosario', 'MON'),
+	('MON05', 'Joateca', 'MON'),
+	('MON06', 'Jocoaitique', 'MON'),
+	('MON07', 'Meanguera', 'MON'),
+	('MON08', 'Perquï¿½n', 'MON'),
+	('MON09', 'San Fernando', 'MON'),
+	('MON10', 'San Isidro', 'MON'),
+	('MON11', 'Torola', 'MON'),
+	('MOS01', 'Chilanga', 'MOS'),
+	('MOS02', 'Delicias de Concepciï¿½n', 'MOS'),
+	('MOS03', 'El Divisadero', 'MOS'),
+	('MOS04', 'Gualococti', 'MOS'),
+	('MOS05', 'Guatajiagua', 'MOS'),
+	('MOS06', 'Jocoro', 'MOS'),
+	('MOS07', 'Lolotiquillo', 'MOS'),
+	('MOS08', 'Osicala', 'MOS'),
+	('MOS09', 'San Carlos', 'MOS'),
+	('MOS10', 'San Francisco Gotera', 'MOS'),
+	('MOS11', 'San Simï¿½n', 'MOS'),
+	('MOS12', 'Sensembra', 'MOS'),
+	('MOS13', 'Sociedad', 'MOS'),
+	('MOS14', 'Yamabal', 'MOS'),
+	('MOS15', 'Yoloaiquï¿½n', 'MOS'),
+-- Santa Ana
+	('SAN01', 'Masahuat', 'SAN'),
+	('SAN02', 'Metapï¿½n', 'SAN'),
+	('SAN03', 'Santa Rosa Guachipilï¿½n', 'SAN'),
+	('SAN04', 'Texistepeque', 'SAN'),
+	('SAC01', 'Santa Ana', 'SAC'),
+	('SAE01', 'Coatepeque', 'SAE'),
+	('SAE02', 'El Congo', 'SAE'),
+	('SAO01', 'Candelaria de la Frontera', 'SAO'),
+	('SAO02', 'Chalchuapa', 'SAO'),
+	('SAO03', 'El Porvenir', 'SAO'),
+	('SAO04', 'San Antonio Pajonal', 'SAO'),
+	('SAO05', 'San Sebastiï¿½n Salitrillo', 'SAO'),
+	('SAO06', 'Santiago de La Frontera', 'SAO'),
+-- San Miguel
+	('SMN01', 'Ciudad Barrios', 'SMN'),
+	('SMN02', 'Sesori', 'SMN'),
+	('SMN03', 'Nuevo Edï¿½n de San Juan', 'SMN'),
+	('SMN04', 'San Gerardo', 'SMN'),
+	('SMN05', 'San Luis de La Reina', 'SMN'),
+	('SMN06', 'Carolina', 'SMN'),
+	('SMN07', 'San Antonio del Mosco', 'SMN'),
+	('SMN08', 'Chapeltique', 'SMN'),
+	('SMC01', 'San Miguel', 'SMC'),
+	('SMC02', 'Comacarï¿½n', 'SMC'),
+	('SMC03', 'Uluazapa', 'SMC'),
+	('SMC04', 'Moncagua', 'SMC'),
+	('SMC05', 'Quelepa', 'SMC'),
+	('SMC06', 'Chirilagua', 'SMC'),
+	('SMO01', 'Chinameca', 'SMO'),
+	('SMO02', 'Nueva Guadalupe', 'SMO'),
+	('SMO03', 'Lolotique', 'SMO'),
+	('SMO04', 'San Jorge', 'SMO'),
+	('SMO05', 'San Rafael Oriente', 'SMO'),
+	('SMO06', 'El Trï¿½nsito', 'SMO'),
+-- San Salvador
+	('SSN01', 'Aguilares', 'SSN'),
+	('SSN02', 'El Paisnal', 'SSN'),
+	('SSN03', 'Guazapa', 'SSN'),
+	('SSO01', 'Apopa', 'SSO'),
+	('SSO02', 'Nejapa', 'SSO'),
+	('SSE01', 'Ilopango', 'SSE'),
+	('SSE02', 'San Martï¿½n', 'SSE'),
+	('SSE03', 'Soyapango', 'SSE'),
+	('SSE04', 'Tonacatepeque', 'SSE'),
+	('SSC01', 'Ayutuxtepeque', 'SSC'),
+	('SSC02', 'Mejicanos', 'SSC'),
+	('SSC03', 'San Salvador', 'SSC'),
+	('SSC04', 'Cuscatancingo', 'SSC'),
+	('SSC05', 'Ciudad Delgado', 'SSC'),
+	('SSS01', 'Panchimalco', 'SSS'),
+	('SSS02', 'Rosario de Mora', 'SSS'),
+	('SSS03', 'San Marcos', 'SSS'),
+	('SSS04', 'Santo Tomï¿½s', 'SSS'),
+	('SSS05', 'Santiago Texacuangos', 'SSS'),
+-- San Vicente
+	('SVN01', 'Apastepeque', 'SVN'),
+	('SVN02', 'Santa Clara', 'SVN'),
+	('SVN03', 'San Ildefonso', 'SVN'),
+	('SVN04', 'San Esteban Catarina', 'SVN'),
+	('SVN05', 'San Sebastiï¿½n', 'SVN'),
+	('SVN06', 'San Lorenzo', 'SVN'),
+	('SVN07', 'Santo Domingo', 'SVN'),
+	('SVS01', 'San Vicente', 'SVS'),
+	('SVS02', 'Guadalupe', 'SVS'),
+	('SVS03', 'Verapaz', 'SVS'),
+	('SVS04', 'Tepetitï¿½n', 'SVS'),
+	('SVS05', 'Tecoluca', 'SVS'),
+	('SVS06', 'San Cayetano Istepeque', 'SVS'),
+-- Sonsonate
+	('SON01', 'Juayï¿½a', 'SON'),
+	('SON02', 'Nahuizalco', 'SON'),
+	('SON03', 'Salcoatitï¿½n', 'SON'),
+	('SON04', 'Santa Catarina Masahuat', 'SON'),
+	('SOC01', 'Sonsonate', 'SOC'),
+	('SOC02', 'Sonzacate', 'SOC'),
+	('SOC03', 'Nahulingo', 'SOC'),
+	('SOC04', 'San Antonio del Monte', 'SOC'),
+	('SOC05', 'Santo Domingo de Guzmï¿½n', 'SOC'),
+	('SOE01', 'Izalco', 'SOE'),
+	('SOE02', 'Armenia', 'SOE'),
+	('SOE03', 'Caluco', 'SOE'),
+	('SOE04', 'San Juliï¿½n', 'SOE'),
+	('SOE05', 'Cuisnahuat', 'SOE'),
+	('SOE06', 'Santa Isabel Ishuatï¿½n', 'SOE'),
+	('SOO01', 'Acajutla', 'SOO'),
+-- Usulutï¿½n
+	('USN01', 'Santiago de Marï¿½a', 'USN'),
+	('USN02', 'Alegrï¿½a', 'USN'),
+	('USN03', 'Berlï¿½n', 'USN'),
+	('USN04', 'Mercedes Umaï¿½a', 'USN'),
+	('USN05', 'Jucuapa', 'USN'),
+	('USN06', 'El triunfo', 'USN'),
+	('USN07', 'Estanzuelas', 'USN'),
+	('USN08', 'San Buenaventura', 'USN'),
+	('USN09', 'Nueva Granada', 'USN'),
+	('USE01', 'Usulutï¿½n', 'USE'),
+	('USE02', 'Jucuarï¿½n', 'USE'),
+	('USE03', 'San Dionisio', 'USE'),
+	('USE04', 'Concepciï¿½n Batres', 'USE'),
+	('USE05', 'Santa Marï¿½a', 'USE'),
+	('USE06', 'Ozatlï¿½n', 'USE'),
+	('USE07', 'Tecapï¿½n', 'USE'),
+	('USE08', 'Santa Elena', 'USE'),
+	('USE09', 'California', 'USE'),
+	('USE10', 'Ereguayquï¿½n', 'USE'),
+	('USO01', 'Jiquilisco', 'USO'),
+	('USO02', 'Puerto El Triunfo', 'USO'),
+	('USO03', 'San Agustï¿½n', 'USO'),
+	('USO04', 'San Francisco Javier', 'USO');
+go
+select * from Distritos;
+go
+-- Direcciones 
+insert into Direcciones values
+-- Linea1, Linea2, ID_Distrito, CodigoPostal
+	('Col Madera, Calle 1, #1N', 'Frente al parque', 'SON02', '02311'),  -- 1					
+	('Barrio El Caldero, Av 2, #2I', 'Frente al amate', 'SOE01', '02306'), -- 2
+	('Res El Cangrejo, Av 3, #3A', 'Frente a la playa', 'SOO01', '02302'), -- 3
+	('Barrio El Centro, Av 4, #4S', 'Frente a catedral', 'SOC01', '02301'), -- 4
+	('Col La Frontera, Calle 5, #5G', 'Km 10', 'AHS03', '02113'), -- 5
+	('Res Buenavista, Calle 6, #6A', 'Contiguo a Alcaldia', 'SAC01', '02201'), -- 6
+	('Res Altavista, Av 7, #7S', 'Contiguo al ISSS', 'SSC03', '01101'), -- 7
+	('Col Las Margaritas, Pje 20, #2-4', 'Junto a ANDA', 'AHS01', '02114'),-- 8
+	('Urb Las Magnolias, Pol 21, #2-6', 'Casa de esquina', 'LLO01', '01115'),-- 9
+	('Caserio Florencia, 3era Calle, #5', 'Casa rosada', 'SON01', '02305');-- 10
+go
+-- EMPLEADOS
+-- Cargos
+INSERT INTO Cargos (Cargo)
+VALUES 
+('SysAdmin'),
+('Gerente'),
+('Vendedor'),
+('Almacenero'),
+('Asistente de Ventas'),
+('Recepcionista');
+
+go
+-- Empleados
+insert into Empleados values
+-- DUI_Empleado, ISSS, Nombres, Apellidos, FechaNac, Telefono, Correo, ID_Cargo, ID_Direccion
+	('04523695-5', '906325698', 'Juan Carlos', 'Rodas Gonzalez', '01-01-1995', '6532-4526', 'juan@hotmail.com', '1', '1'),
+	('04321098-7', '963852741', 'Diego Franciso', 'Sanchez Castro', '02-02-1990', '7895-5698', 'diego@gmail.com', '2', '2'),
+	('03210987-4', '321654987', 'Raul Edgardo', 'Del Valle Garcia', '03-03-1980', '6598-2548', 'raul@outlook.com', '3', '3'),
+	('06789012-1', '951753258', 'Mary Carmen', 'Perez de Hernandez', '04-04-1985', '7965-2526', 'may@yahoo.com', '4', '4');
+
+-- Proveedores
+go
 INSERT INTO Proveedores (Telefono, idDireccion, Nombre)
-VALUES
-    ('2455-8700', 1, 'Distribuidora Lopez'),
-    ('2282-1244', 2, 'Distribuidora M.C.'),
-    ('7746-9065', 3, 'Distribuidora Garcia'),
-    ('2099-7578', 4, 'Distribuidora Valencia'),
-    ('6874-3467', 5, 'Distribuidora Fernandez');
+VALUES 
+('123456789', 1, 'Ferreterï¿½a El Martillo Dorado'), -- Proveedor 1
+('987654321', 2, 'Suministros ConstruFï¿½cil'),       -- Proveedor 2
+('111222333', 3, 'Herramientas ProExcel'),           -- Proveedor 3
+('555666777', 4, 'Ferreterï¿½a Innovaciï¿½n Total'),      -- Proveedor 4
+('999888777', 5, 'Materiales Avanzados S.A.');        -- Proveedor 5
 
-INSERT INTO Clientes (Nombres, Apellidos, DUI, Telefono)
-VALUES
-    ('Sara', 'Melendez', '55468896-0', '7878-0997'),
-    ('Ernesto', 'Perez', '62743359-6', '7245-8988'),
-    ('Karina', 'Garcia', '67253886-0', '6763-9122'),
-    ('Luis', 'Martinez', '34447890-1', '7128-9903'),
-    ('Ezequiel', 'Godinez', '65372920-1', '7746-8234');
 
+-- Insertar datos en la tabla Categorias
+go
 INSERT INTO Categorias (Nombre, Descripcion)
-VALUES
-    ('Iluminaria', 'Productos de iluminación'),
-    ('Herramientas para Jardinería', 'Herramientas de jardín y accesorios'),
-    ('Pintura y Acabados', 'Pinturas y suministros de pintura'),
-    ('Construcción y Materiales', 'Materiales de construcción y herramientas'),
-    ('Cerrajería', 'Cerraduras, llaves y sistemas de seguridad');
+VALUES 
+('Herramientas', 'Productos relacionados con herramientas y accesorios.'),
+('Materiales de Construcciï¿½n', 'Productos para la construcciï¿½n y remodelaciï¿½n.'),
+('Pinturas y Acabados', 'Productos para pintura y acabados de interiores y exteriores.'),
+('Fontanerï¿½a', 'Productos para sistemas de fontanerï¿½a y plomerï¿½a.'),
+('Electricidad', 'Productos relacionados con sistemas elï¿½ctricos y electrï¿½nicos.');
 
-INSERT INTO Productos (NombreProducto, IDProveedor, Descripcion, Precio, Stock, IdCategoria, FechaCreacion, FechaModificacion)
-VALUES
-    ('Rotomartillo Inalámbrico', 1, 'Potente rotomartillo inalámbrico para perforaciones precisas.', 229.99, 75, 1, '2023-09-27', '2023-09-28'),
-    ('Licuadora Multifuncional Profesional', 2, 'Licuadora de alto rendimiento con múltiples funciones y potencia mejorada.', 149.99, 45, 1, '2023-09-29', '2023-09-30'),
-    ('Martillo de Carpintero Resistente', 3, 'Martillo de carpintero resistente con mango de madera y cabeza de acero.', 44.99, 110, 4, '2023-10-01', '2023-10-02'),
-    ('Lámpara de Techo LED Moderna', 4, 'Lámpara de techo LED moderna de bajo consumo con diseño elegante.', 64.99, 90, 1, '2023-10-03', '2023-10-04'),
-    ('Set de Pinceles Artísticos Profesionales', 5, 'Set de pinceles artísticos profesionales con cerdas de alta calidad.', 69.99, 25, 3, '2023-10-05', '2023-10-06');
+go
+
+-- Insertar datos en la tabla Productos
+INSERT INTO Productos (Nombre, Descripcion, Precio, Stock, IdCategoria, ImagenURL)
+VALUES 
+('Martillo', 'Martillo de alta calidad para trabajos de construcciï¿½n.', 19.99, 50, 1, '/imagenes/martillo.jpg'),
+('Destornillador', 'Destornillador magnï¿½tico con mango ergonï¿½mico.', 9.99, 100, 1, '/imagenes/destornillador.jpg'),
+('Pintura Blanca', 'Pintura acrï¿½lica blanca para interiores.', 29.99, 30, 3, '/imagenes/pintura.jpg'),
+('Tuberï¿½a PVC', 'Tuberï¿½a de PVC resistente para sistemas de fontanerï¿½a.', 12.50, 75, 4, '/imagenes/tuberia.jpg'),
+('Bombilla LED', 'Bombilla LED de bajo consumo para iluminaciï¿½n.', 5.99, 200, 5, '/imagenes/bombilla.jpg');
+
+-- Insertar datos en la tabla Clientes
+go
+INSERT INTO Clientes (Nombres, Apellidos, DUI, Telefono)
+VALUES 
+('Juan', 'Pï¿½rez', '1234567890', '123456789'),
+('Marï¿½a', 'Gï¿½mez', '2345678901', '234567890'),
+('Carlos', 'Martï¿½nez', '3456789012', '345678901');
+
+-- Insertar datos en la tabla Pedidos
+go
+INSERT INTO Pedidos (Fecha, IDProveedor, Observaciones, CostoTotal, Estado, IDEmpleado)
+VALUES 
+('2023-10-01', 1, 'Pedido de herramientas', 500.00, 'En proceso', 1), -- Pedido 1
+('2023-10-02', 2, 'Pedido de materiales de construcciï¿½n', 800.00, 'En espera', 2), -- Pedido 2
+('2023-10-03', 1, 'Pedido de pinturas', 300.00, 'Entregado', 3), -- Pedido 3
+('2023-10-04', 3, 'Pedido de fontanerï¿½a', 250.00, 'En proceso', 1), -- Pedido 4
+('2023-10-05', 2, 'Pedido de herramientas elï¿½ctricas', 600.00, 'Entregado', 2); -- Pedido 5
+
+-- Insertar datos en la tabla DetallePedidos
+go
+INSERT INTO DetallePedidos (idPedido, idProducto, Cantidad, PrecioUnitario)
+VALUES 
+(1, 1, 10, 25.00), -- Detalle del Pedido 1
+(1, 2, 5, 40.00),
+(2, 3, 8, 50.00), -- Detalle del Pedido 2
+(3, 4, 15, 20.00), -- Detalle del Pedido 3
+(4, 5, 12, 18.00), -- Detalle del Pedido 4
+(5, 5, 7, 55.00); -- Detalle del Pedido 5
+
+-- Insertar datos en la tabla Ventas
+go
+INSERT INTO Ventas (IDCliente, IDEmpleado, FechaCompra, MontoCompra)
+VALUES 
+(1, 1, '2023-10-01', 200.00), -- Venta 1
+(2, 2, '2023-10-02', 150.00), -- Venta 2
+(3, 3, '2023-10-03', 300.00), -- Venta 3
+(1, 2, '2023-10-04', 180.00), -- Venta 4
+(2, 1, '2023-10-05', 250.00); -- Venta 5
+
+-- Insertar datos en la tabla DetalleVentas
+go
+INSERT INTO DetalleVentas (idVenta, idProducto, Cantidad)
+VALUES 
+(1, 1, 5), -- Detalle de Venta 1
+(1, 2, 3),
+(2, 3, 2), -- Detalle de Venta 2
+(3, 4, 4), -- Detalle de Venta 3
+(4, 5, 7), -- Detalle de Venta 4
+(5, 5, 6); -- Detalle de Venta 5
+
+-- Insertar datos en la tabla Compras
+go
+INSERT INTO Compras (IDProveedor, IDEmpleado, FechaCompra, MontoCompra)
+VALUES 
+(1, 1, '2023-10-01', 500.00), -- Compra 1
+(2, 2, '2023-10-02', 800.00), -- Compra 2
+(3, 3, '2023-10-03', 300.00), -- Compra 3
+(1, 2, '2023-10-04', 250.00), -- Compra 4
+(2, 1, '2023-10-05', 600.00); -- Compra 5
+
+-- Insertar datos en la tabla DetalleCompras
+go
+INSERT INTO DetalleCompras (idCompra, idProducto, Cantidad, PrecioUnitario)
+VALUES 
+(1, 1, 10, 45.00), -- Detalle de Compra 1
+(1, 2, 5, 30.00),
+(2, 3, 8, 55.00), -- Detalle de Compra 2
+(3, 4, 15, 22.50), -- Detalle de Compra 3
+(4, 5, 12, 20.00), -- Detalle de Compra 4
+(5, 5, 7, 65.00); -- Detalle de Compra 5
+
+-- Insertar datos en la tabla Facturas (relacionadas con Compras)
+go
+INSERT INTO Facturas (NumeroFactura, CreditoFiscal, IVA, idVenta, IdCliente, Monto, FechaFactura)
+VALUES 
+('FAC123', 'CF123456', 13.00, NULL, NULL, 500.00, '2023-10-02'), -- Factura relacionada con Compra 1
+('FAC124', 'CF654321', 13.00, NULL, NULL, 800.00, '2023-10-03'), -- Factura relacionada con Compra 2
+('FAC125', 'CF987654', 13.00, NULL, NULL, 300.00, '2023-10-04'), -- Factura relacionada con Compra 3
+('FAC126', 'CF111222', 13.00, NULL, NULL, 250.00, '2023-10-05'), -- Factura relacionada con Compra 4
+('FAC127', 'CF333444', 13.00, NULL, NULL, 600.00, '2023-10-06'); -- Factura relacionada con Compra 5
 
 
-INSERT INTO Pedidos (Fecha, IDProveedor, Observaciones, CostoTotal, IDEmpleado)
-VALUES
-    ('2023-09-20', 1, 'Pedido de herramientas de alta calidad', 780.00, 1),
-    ('2023-09-21', 2, 'Compra de electrodomésticos para el hogar', 520.00, 2),
-    ('2023-09-22', 3, 'Adquisición de suministros de ferretería esenciales', 310.00, 3),
-    ('2023-09-23', 4, 'Pedido de iluminación para renovación de oficinas', 220.00, 4),
-    ('2023-09-24', 5, 'Adquisición de pintura y material de arte', 315.00, 5);
+-- Insertar datos en la tabla Opciones para una ferreterï¿½a
+go
+INSERT INTO Opciones (NombreOpcion)
+VALUES 
+('Gestionar Productos'), -- 1
+('Gestionar Proveedores'), -- 2
+('Gestionar Compras'), -- 3
+('Gestionar Ventas'), -- 4
+('Gestionar Clientes'), -- 5
+('Gestionar Empleados'), -- 6
+('Gestionar Inventarios'), -- 7
+('Generar Reportes'), -- 8
+('Gestionar Promociones'), -- 9
+('Gestionar Sucursales'), -- 10
+('Gestionar Devoluciones'); -- 11
 
-INSERT INTO Compras (IDCliente, IDEmpleado, FechaCompra, MontoCompra)
-VALUES
-    (1, 1, '2023-09-19', 260.00),
-    (2, 2, '2023-10-20', 170.00),
-    (3, 3, '2023-11-21', 110.00),
-    (4, 4, '2023-12-22', 80.00),
-    (5, 5, '2024-01-23', 130.00);
+-- Roles
+go
+INSERT INTO Roles(NombreRol)
+VALUES 
+('SysAdmin'),
+('Gerente'),
+('Vendedor'),
+('Almacenero'),
+('Asistente de Ventas'),
+('Recepcionista');
 
-INSERT INTO Facturas (NumeroFactura, CreditoFiscal, IVA, IdCliente, Monto)
-VALUES
-    ('FAC006', 'CF006', 13.00, 1, 230.00),
-    ('FAC007', 'CF007', 13.00, 2, 145.00),
-    ('FAC008', 'CF008', 13.00, 3, 95.00),
-    ('FAC009', 'CF009', 13.00, 4, 68.00),
-    ('FAC010', 'CF010', 13.00, 5, 110.00);
+-- Insertar datos en la tabla AsignacionRolesOpciones
+go
+INSERT INTO AsignacionRolesOpciones (ID_Rol, ID_Opcion)
+VALUES 
+(1, 1), -- Asignar Opciï¿½n 1 a Rol 1
+(1, 2), -- Asignar Opciï¿½n 2 a Rol 1
+(2, 2), -- Asignar Opciï¿½n 2 a Rol 2
+(2, 3); -- Asignar Opciï¿½n 3 a Rol 2
+
+
+
+
+
+-- Insertar datos en la tabla Usuarios
+go
+INSERT INTO Usuarios (ID_Empleado, ID_Rol, Usuario, Clave)
+VALUES 
+(1, 1, 'admin', 'admin123'), -- Usuario Admin
+(2, 2, 'empleado1', 'pass123'), -- Usuario Empleado con Rol 2
+(3, 2, 'empleado2', 'pass456'); -- Otro Usuario Empleado con Rol 2
 
 --Consultas Normales
 
@@ -85,7 +564,7 @@ SELECT COUNT(*) AS TotalProductos
 FROM Productos
 WHERE Precio > 200 AND Stock > 0;
 
---Productos con precio más alto
+--Productos con precio mÃ¡s alto
 SELECT NombreProducto, Precio
 FROM Productos
 WHERE Precio > (SELECT AVG(Precio) FROM Productos);
